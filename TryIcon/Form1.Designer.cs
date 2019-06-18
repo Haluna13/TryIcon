@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnTray = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ntiTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1.SuspendLayout();
+            this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTray
@@ -57,29 +58,31 @@
             this.label1.Text = "Developed by 3605 김하영";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // notifyIcon1
+            // ntiTray
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            this.ntiTray.ContextMenuStrip = this.cmsMenu;
+            this.ntiTray.Icon = ((System.Drawing.Icon)(resources.GetObject("ntiTray.Icon")));
+            this.ntiTray.Text = "트레이 아이콘";
             // 
-            // contextMenuStrip1
+            // cmsMenu
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.폼보이기ToolStripMenuItem,
             this.종료ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.cmsMenu.Name = "cmsMenu";
+            this.cmsMenu.Size = new System.Drawing.Size(127, 48);
+            this.cmsMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip1_Opening);
             // 
             // 폼보이기ToolStripMenuItem
             // 
             this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
-            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.폼보이기ToolStripMenuItem.Text = "폼 보이기";
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             // 
             // Form1
@@ -94,7 +97,8 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "트레이 아이콘 by 3605 김하영";
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,8 +107,8 @@
 
         private System.Windows.Forms.Button btnTray;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.NotifyIcon ntiTray;
+        private System.Windows.Forms.ContextMenuStrip cmsMenu;
         private System.Windows.Forms.ToolStripMenuItem 폼보이기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
     }

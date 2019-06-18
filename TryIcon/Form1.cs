@@ -51,7 +51,7 @@ namespace TryIcon
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.ntiTray.Visible = false;
-            Application.ExitThread();  // 어플리케이션 쓰레드 완전 종료
+            Application.ExitThread(); 
         }
 
     }
